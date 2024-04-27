@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(to right bottom, orange, white, green);
+        }
+
+        .clock {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .clock:hover {
+            background-color: #e9e9e9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clock" id="newYorkClock" onclick="toggleFormat('newYorkClock')">New York: <span id="newYorkTime"></span></div>
+    <div class="clock" id="londonClock" onclick="toggleFormat('londonClock')">London: <span id="londonTime"></span></div>
+    <div class="clock" id="tokyoClock" onclick="toggleFormat('tokyoClock')">Tokyo: <span id="tokyoTime"></span></div>
+
+    <script>
+        function updateTime() {
+            const newYorkTime = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
+            const londonTime = new Date().toLocaleString('en-US', { timeZone: 'Europe/London' });
+            const tokyoTime = new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo' });
+
+            document.getElementById('newYorkTime').textContent = newYorkTime;
+            document.getElementById('londonTime').textContent = londonTime;
+            document.getElementById('tokyoTime').textContent = tokyoTime;
+        }
+
+        function toggleFormat(clockId) {
+            const clock = document.getElementById(clockId);
+            const currentTime = new Date();
+
+            if (clock.textContent.includes("AM") || clock.textContent.includes("PM")) {
+                clock.textContent = currentTime.toLocaleString('en-US', { timeZone: clockId === 'newYorkClock' ? 'America/New_York' : clockId === 'londonClock' ? 'Europe/London' : 'Asia/Tokyo', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false });
+            } else {
+                clock.textContent = currentTime.toLocaleString('en-US', { timeZone: clockId === 'newYorkClock' ? 'America/New_York' : clockId === 'londonClock' ? 'Europe/London' : 'Asia/Tokyo', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
+            }
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+
+</body>
+</html>

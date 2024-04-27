@@ -1,0 +1,108 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.container{
+    height: 300px;
+    width: 600px;
+    border: double 5px rgb(247, 84, 84);
+    background-image: linear-gradient();
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+}
+.container1{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* flex-direction: column; */
+    background-image:linear-gradient(to right bottom, orange, white);
+
+}
+.container2{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* flex-direction: column; */
+    background-image:linear-gradient(to right bottom, white, green);
+
+
+
+}
+.button1{
+    height: 40px;
+    width: 100px;
+    background-color: aqua;
+    text-align: center;  
+    border-radius: 90px;        
+    
+}
+.button1:hover{
+    rotate: 90deg;
+}
+.button2{
+    height: 40px;
+    width: 100px;
+    background-color: aqua;
+    text-align: center;      
+    border-radius: 90px;   
+    
+}
+.button2:hover{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: underline;
+}
+.button3{
+    height: 40px;
+    width: 100px;
+    background-color: aqua;
+    text-align: center;       
+    border-radius: 90px;   
+
+}
+.button3:hover{
+    background-image: linear-gradient(rgb(92, 92, 236), rgb(236, 96, 96));
+
+}
+
+.button4{
+    height: 40px;
+    width: 100px;
+    background-color: aqua;
+    text-align: center;  
+    border-radius: 90px;     
+}
+.button4:hover{
+    background: transparent;
+}
+.button5{
+    height: 40px;
+    width: 100px;
+    background-color: aqua;
+    text-align: center;       
+    border-radius: 90px;   
+}
+.button5:hover{
+    letter-spacing: 2px;
+}
+.button6{
+    height: 40px;
+    width: 100px;
+    background-color: aqua;
+    text-align: center;
+    border-radius: 90px;  
+    transition: all 1s linear;
+    transition: all 2s ease-in; 
+}
+.button6:hover{
+/* transform: scale(1.6); */
+transform: rotate(360deg);
+}
